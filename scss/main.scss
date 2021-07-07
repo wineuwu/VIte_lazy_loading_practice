@@ -1,1 +1,30 @@
 @import 'reset';
+
+#content{
+  padding: 30px;
+  h1{
+    text-align: center;
+    font-weight: 900;
+    color:#3f3f3f;
+    font-size: 45px;
+    margin-bottom: 20px;
+  }
+  .showPic{
+    width: 100%;
+    .container{
+      max-width: 960px;
+      margin: 0 auto ;
+      display: flex;
+      flex-wrap: wrap;
+      .pic-col{
+        box-sizing: border-box;
+        width:320px;
+        padding:10px 10px 0 0;
+        img{
+          width: 100%;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
