@@ -6,22 +6,20 @@ const pic = picDom.querySelectorAll('.container .pic-col img');
 const API_TOKEN = import.meta.env.VITE_PEXEL_API_TOKEN;
 const url =`https://api.unsplash.com/photos/?client_id=${API_TOKEN}&per_page=20`;
 
-
 const lazyLoading =(entry) => {
-  entry.forEach((img,idx) => {
+  entry.forEach((img) => {
     if(img.isIntersecting){
-      console.log(img.target);
-      observer.unobserve(img.target)
-    }
-  
+      img.target.classList.add('is-active')
+    } 
   })
  
 }
 const observer = new IntersectionObserver(lazyLoading, {
   root:null,
   rootMargin: "0px 0px 0px 0px",
-  threshold: [0]
+  threshold: [.25]
 })
+
 
 pic.forEach(img => observer.observe(img))
 
